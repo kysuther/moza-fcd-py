@@ -1,0 +1,4 @@
+# Normalise line endings in the repo (LF), check out as the platform prefers.
+* text=auto
+*.png binary
+*.ps1 text eol=crlf

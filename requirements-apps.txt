@@ -1,0 +1,16 @@
+# Extra packages for the apps in apps/ (the driver itself needs only requirements.txt).
+#   pip install -r requirements.txt -r requirements-apps.txt
+# Each app also runs with only some of these; missing parts show N/A or a clear error.
+
+# apps/everyday (Windows): system stats, audio control, time zones
+psutil>=5.9
+pycaw>=20230407
+comtypes>=1.2
+tzdata
+
+# apps/ifly_cdu and apps/fenix_mcdu: Socket.IO / WebSocket clients (brings websocket-client)
+python-socketio[client]>=5.0
+
+# apps/a350_rmp, apps/fenix_mcdu and apps/a220: Microsoft Flight Simulator (SimConnect)
+# (apps/a220 also needs MobiFlight's free WASM event module in the MSFS Community folder)
+SimConnect>=0.4.26

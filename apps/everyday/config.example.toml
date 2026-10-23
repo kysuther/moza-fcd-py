@@ -1,0 +1,96 @@
+# Everyday app settings - EXAMPLE. Copy this file to config.toml (git ignores it, so your secrets stay
+# local) and edit that copy; restart the app after changes. Without a config.toml, or for keys missing
+# from it, the app uses the defaults in everyday_lib/config.py.
+# Things you change on the FCD itself are saved elsewhere: the start page in
+# settings.json, notes in notes.json (both next to this file), brightness on the device.
+
+[clock]
+# Extra time zones on the CLOCK page (IANA names). Labels are optional, max 10 characters.
+world = [
+    { zone = "UTC", label = "UTC" },
+    { zone = "America/Los_Angeles", label = "LOS ANGEL" },
+    { zone = "Europe/London", label = "LONDON" },
+    { zone = "Asia/Tokyo", label = "TOKYO" },
+]
+
+[timers]
+pomodoro_focus_min = 25
+pomodoro_break_min = 5
+
+[system]
+ping_host = "1.1.1.1"
+
+[alerts]
+# The MSG light comes on while any of these is true.
+cpu_percent = 95        # sustained for cpu_seconds
+cpu_seconds = 30
+ram_percent = 90
+gpu_temp_c = 85
+disk_free_percent = 10
+
+[audio]
+volume_step = 5
+# Apps to hide from the mixer (process names, case-insensitive).
+mixer_hide = []
+# Light FAIL while the microphone is muted.
+mic_mute_light = true
+
+[display]
+# Colour used for "grey" text (labels, hints, unavailable options). With FCD screen firmware 1.2.7.32+
+# grey shows as Cockpit's Text Color 9. On older screen firmware grey is invisible (black): set "white"
+# or another colour name (cyan, green, amber, yellow, magenta, red) there.
+grey = "grey"
+
+[windows]
+# RESTART and SHUT DOWN (after EXEC) wait this long, so you can still abort from the WINDOWS page.
+shutdown_delay_s = 60
+
+[launcher]
+# Up to 10 per page (left column first). Labels: max 11 characters. Each item has ONE action:
+#   run  = an app, file, folder or URL (environment variables like %USERPROFILE% work).
+#          Add args = ["..."] to run a program with arguments.
+#   keys = a shortcut sent to the focused window, e.g. "CTRL+SHIFT+M", or a list of steps:
+#          ["CTRL+C", "WAIT 0.5", "ALT+TAB", "CTRL+V"]   (WAIT is in seconds, max 10)
+#   text = text typed into the focused window ("\n" presses Enter)
+# Add confirm = true to make an item wait for EXEC.
+# Key names: CTRL SHIFT ALT WIN, A-Z, 0-9, F1-F24, ENTER ESC TAB SPACE BACKSPACE DELETE INSERT HOME END
+# PGUP PGDN UP DOWN LEFT RIGHT PRINTSCREEN VOLUMEUP VOLUMEDOWN VOLUMEMUTE MEDIAPLAYPAUSE MEDIANEXT
+# MEDIAPREV MINUS PLUS COMMA PERIOD SLASH SEMICOLON QUOTE LBRACKET RBRACKET BACKSLASH BACKTICK NUMPAD0-9
+items = [
+    { label = "EXPLORER", run = "explorer.exe" },
+    { label = "TASK MGR", run = "taskmgr.exe" },
+    { label = "SETTINGS", run = "ms-settings:" },
+    { label = "DOWNLOADS", run = "%USERPROFILE%\\Downloads" },
+    { label = "SNIP", keys = "WIN+SHIFT+S" },
+    { label = "TASK VIEW", keys = "WIN+TAB" },
+    { label = "EMOJI", keys = "WIN+PERIOD" },
+    { label = "CLIP HIST", keys = "WIN+V" },
+    # { label = "SPOTIFY", run = "spotify:" },
+    # { label = "SIGN OUT", run = "shutdown.exe", args = ["/l"], confirm = true },
+]
+
+# --- Online services ---
+[weather]
+# Forecast from Open-Meteo, METAR/TAF from aviationweather.gov (no accounts needed).
+# Example location - set your own city, coordinates and nearest METAR airport.
+city = "Chicago"
+latitude = 41.88
+longitude = -87.63
+metar_airport = "KORD"
+units = "imperial"      # or "metric" (°C, km/h)
+
+[simbrief]
+# Your latest flight plan. The numeric user ID is used when set; otherwise the username.
+# Leave both empty to hide the plan (the page then says NOT SET UP).
+userid = ""
+username = ""
+
+[discord]
+# Your own Discord application (discord.com/developers/applications). See README "Discord setup".
+# Needs the Discord desktop app running. The first connection asks you to approve it in Discord.
+# Keep the secret private: config.toml is git-ignored for this reason.
+client_id = ""
+client_secret = ""
+redirect_uri = "http://localhost"   # must also be added under OAuth2 > Redirects in the portal
+# The MSG light stays on this long after a notification, unless you open DISCORD > NOTIFICATIONS.
+notification_light_minutes = 10

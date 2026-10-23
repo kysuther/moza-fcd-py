@@ -1,0 +1,37 @@
+# --- Python / build ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Logs and temp files ---
+*.log
+*.tmp
+
+# --- Everyday app: personal config, secrets and data written at runtime ---
+# Copy apps/everyday/config.example.toml to config.toml and fill it in.
+apps/everyday/config.toml
+apps/everyday/settings.json
+apps/everyday/notes.json
+apps/everyday/discord_token.json
+
+# --- Third-party documents that can't be redistributed (get them from the publisher) ---
+apps/a350_rmp/*.pdf
+
+# --- Claude Code: personal settings (the shared skill in .claude/skills is committed) ---
+.claude/settings.local.json
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

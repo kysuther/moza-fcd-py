@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moza-fcd"
+version = "0.1.0"
+description = "Standalone Python driver for the MOZA FCD (MA3F / MB7F) flight computer display"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = ["pyserial>=3.5"]
+
+[project.optional-dependencies]
+everyday = ["psutil>=5.9", "pycaw>=20230407", "comtypes>=1.2", "tzdata"]
+sims = ["python-socketio[client]>=5.0", "SimConnect>=0.4.26"]
+
+
+[tool.setuptools]
+packages = ["moza_fcd"]
