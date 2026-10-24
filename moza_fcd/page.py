@@ -167,6 +167,8 @@ class Page:
             if not cell:
                 continue
             ch = str(cell[0])[:1] or " "
+            if ord(ch) < 32 or ord(ch) == 127:      # a NUL reaching the device stops that row updating
+                ch = " "
             letter = str(cell[1]) if len(cell) > 1 else "w"
             small = len(cell) > 2 and int(cell[2]) != 0
             page._cells[i] = Cell(ch, LETTER_CODES.get(letter, 7), small)

@@ -11,6 +11,9 @@ tzdata
 # apps/ifly_cdu and apps/fenix_mcdu: Socket.IO / WebSocket clients (brings websocket-client)
 python-socketio[client]>=5.0
 
-# apps/a350_rmp, apps/fenix_mcdu and apps/a220: Microsoft Flight Simulator (SimConnect)
+# apps/bb757_cdu: the WebSocket server the BlueBird 757 connects to
+websockets>=13.0
+
+# apps/a350_rmp, apps/fenix_mcdu, apps/bb757_cdu and apps/a220: Microsoft Flight Simulator (SimConnect)
 # (apps/a220 also needs MobiFlight's free WASM event module in the MSFS Community folder)
 SimConnect>=0.4.26

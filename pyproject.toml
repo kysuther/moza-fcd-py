@@ -13,7 +13,7 @@ dependencies = ["pyserial>=3.5"]
 
 [project.optional-dependencies]
 everyday = ["psutil>=5.9", "pycaw>=20230407", "comtypes>=1.2", "tzdata"]
-sims = ["python-socketio[client]>=5.0", "SimConnect>=0.4.26"]
+sims = ["python-socketio[client]>=5.0", "websockets>=13.0", "SimConnect>=0.4.26"]
 
 
 [tool.setuptools]
