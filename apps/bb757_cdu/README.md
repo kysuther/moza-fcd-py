@@ -9,6 +9,8 @@ python -m moza_fcd run --app apps/bb757_cdu/bb757_cdu.py
 
 Start it before MOZA Cockpit (or close Cockpit first), and the order with the sim doesn't matter.
 
+If the keys stop working, restart the app.
+
 ## How it works
 
 - **Screen.** The 757 drives WinWing-style CDUs itself. Its code connects to `ws://localhost:8320/winwing/cdu-captain` (MobiFlight's CDU interface), retrying every 5 seconds, and pushes the whole screen as `{"Target":"Display","Data":[...]}` whenever it changes. This app runs that server. Only one program can use port 8320, so **don't run MobiFlight Connector or the WINGFLEX app at the same time**. If the port is taken the FCD shows `PORT 8320 IN USE`.
