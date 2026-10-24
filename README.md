@@ -279,6 +279,7 @@ Main-board group 2 (called "screen" in Cockpit's tables) ignores writes on this 
 | `apps/a350_rmp/` | iniBuilds A350 radio management panel (MSFS, SimConnect) |
 | `apps/ifly_cdu/` | iFly 737 MAX 8 captain CDU: screen, keys and lights, from the iFly EFB's local web server (port 8084) |
 | `apps/fenix_mcdu/` | Fenix A320 MCDU (captain or F/O): screen from the Fenix GraphQL gateway (port 8083), keys via its `S_CDU<n>_KEY_*` L-vars over SimConnect, Airbus keys mapped onto the 737 keypad |
+| `apps/bb757_cdu/` | BlueBird 757 captain CDU: the 757 pushes its screen to this app's WebSocket server (port 8320, MobiFlight's CDU interface); keys and lights via its L-vars over SimConnect |
 | `apps/a220/` | Synaptic A220: the FCD as the A220's keypad (MKP keys via MobiFlight's WASM module), plus RADIO (VHF/NAV/XPDR) and FLIGHT (modes, selections, master alerts) pages |
 
 Run any of them with `python -m moza_fcd run --app <path>`; each folder has a README. The everyday app reads its settings from `apps/everyday/config.toml`: copy `config.example.toml` to that name first (it's git-ignored because it can hold API secrets).
