@@ -4,6 +4,8 @@ A standalone Python driver for the MOZA FCD flight computer display (MA3F Airbus
 
 MIT licensed (see [LICENSE](LICENSE)). It's a port of MobiFlight's open-source `MobiFlightMoza` library (also MIT, see [NOTICE](NOTICE)), which was written from MOZA's partner protocol guide and tested on a real **MA3F**. This port has been tested on a real **MB7F** (PID `0x1306`, firmware 1.2.7.30); see [What's verified](#whats-verified).
 
+> This repo was created because I was just playing around with Claude Code to see if I could build my own apps on the hardware. Everything in here was created for me to use for myself and should be considered experimental. Do not expect any support.
+
 > **Created with AI.** This project (code, tests, protocol notes and documentation) was developed with an AI coding assistant, Anthropic's Claude Code, working with the repo owner. Behaviour was tested on real hardware where noted under [What's verified](#whats-verified); everything else is unverified. Review the code before relying on it.
 
 > **Not affiliated with or endorsed by MOZA Racing (Gudsen).** MOZA, the FCD names and the aircraft names belong to their owners. Use at your own risk. The driver only uses the documented screen protocol and commands verified on hardware; it never updates firmware.

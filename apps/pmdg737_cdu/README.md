@@ -1,5 +1,7 @@
 # PMDG 737 CDU
 
+The Moza Cockpit software supports the PMDG 737 out of the box. This app was added because when attempting to use it, the screen was not updating for me at the time. Try the official software before using this.
+
 The CDU of the PMDG 737 (MSFS) on the MOZA MB7F FCD: screen, keys and lights, read straight from PMDG's SDK. It works with every 737 variant PMDG ships (they share the NG3 SDK). Use it instead of MOZA Cockpit's 737 support, not alongside it.
 
 ```bash
