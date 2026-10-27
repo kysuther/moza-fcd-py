@@ -4,6 +4,8 @@ A standalone Python driver for the MOZA FCD flight computer display (MA3F Airbus
 
 MIT licensed (see [LICENSE](LICENSE)). It's a port of MobiFlight's open-source `MobiFlightMoza` library (also MIT, see [NOTICE](NOTICE)), which was written from MOZA's partner protocol guide and tested on a real **MA3F**. This port has been tested on a real **MB7F** (PID `0x1306`, firmware 1.2.7.30); see [What's verified](#whats-verified).
 
+> This repo was created because I was just playing around with Claude Code to see if I could build my own apps on the hardware. Everything in here was created for me to use for myself and should be considered experimental. Do not expect any support.
+
 > **Created with AI.** This project (code, tests, protocol notes and documentation) was developed with an AI coding assistant, Anthropic's Claude Code, working with the repo owner. Behaviour was tested on real hardware where noted under [What's verified](#whats-verified); everything else is unverified. Review the code before relying on it.
 
 > **Not affiliated with or endorsed by MOZA Racing (Gudsen).** MOZA, the FCD names and the aircraft names belong to their owners. Use at your own risk. The driver only uses the documented screen protocol and commands verified on hardware; it never updates firmware.
@@ -277,6 +279,7 @@ Main-board group 2 (called "screen" in Cockpit's tables) ignores writes on this 
 |---|---|
 | `apps/everyday/` | Everyday PC controls and info: dashboard, audio, media, system, clock/timers, launcher, tools, Windows controls, weather/METAR, SimBrief, Discord, brightness and idle dimming |
 | `apps/a350_rmp/` | iniBuilds A350 radio management panel (MSFS, SimConnect) |
+| `apps/pmdg737_cdu/` | PMDG 737 CDU (captain or F/O): screen, keys and lights from PMDG's SDK over SimConnect (needs the `[SDK]` broadcast lines in `737_Options.ini`) |
 | `apps/ifly_cdu/` | iFly 737 MAX 8 captain CDU: screen, keys and lights, from the iFly EFB's local web server (port 8084) |
 | `apps/fenix_mcdu/` | Fenix A320 MCDU (captain or F/O): screen from the Fenix GraphQL gateway (port 8083), keys via its `S_CDU<n>_KEY_*` L-vars over SimConnect, Airbus keys mapped onto the 737 keypad |
 | `apps/bb757_cdu/` | BlueBird 757 captain CDU: the 757 pushes its screen to this app's WebSocket server (port 8320, MobiFlight's CDU interface); keys and lights via its L-vars over SimConnect |
