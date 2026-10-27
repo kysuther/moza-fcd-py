@@ -277,6 +277,7 @@ Main-board group 2 (called "screen" in Cockpit's tables) ignores writes on this 
 |---|---|
 | `apps/everyday/` | Everyday PC controls and info: dashboard, audio, media, system, clock/timers, launcher, tools, Windows controls, weather/METAR, SimBrief, Discord, brightness and idle dimming |
 | `apps/a350_rmp/` | iniBuilds A350 radio management panel (MSFS, SimConnect) |
+| `apps/pmdg737_cdu/` | PMDG 737 CDU (captain or F/O): screen, keys and lights from PMDG's SDK over SimConnect (needs the `[SDK]` broadcast lines in `737_Options.ini`) |
 | `apps/ifly_cdu/` | iFly 737 MAX 8 captain CDU: screen, keys and lights, from the iFly EFB's local web server (port 8084) |
 | `apps/fenix_mcdu/` | Fenix A320 MCDU (captain or F/O): screen from the Fenix GraphQL gateway (port 8083), keys via its `S_CDU<n>_KEY_*` L-vars over SimConnect, Airbus keys mapped onto the 737 keypad |
 | `apps/bb757_cdu/` | BlueBird 757 captain CDU: the 757 pushes its screen to this app's WebSocket server (port 8320, MobiFlight's CDU interface); keys and lights via its L-vars over SimConnect |
