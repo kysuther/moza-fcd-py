@@ -57,7 +57,6 @@ class AudioService(Worker):
 
     @staticmethod
     def _mic_volume():
-        from ctypes import POINTER, cast
         from comtypes import CLSCTX_ALL
         from pycaw.pycaw import IAudioEndpointVolume
         from pycaw.utils import AudioUtilities
@@ -65,7 +64,9 @@ class AudioService(Worker):
         if mic is None:
             return None
         iface = mic.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
-        return cast(iface, POINTER(IAudioEndpointVolume))
+        # QueryInterface, not ctypes.cast: a cast makes a second COM pointer without AddRef, both release
+        # on garbage collection, and the double Release crashes the process (access violation).
+        return iface.QueryInterface(IAudioEndpointVolume)
 
     @staticmethod
     def _sessions_for(key: str):
